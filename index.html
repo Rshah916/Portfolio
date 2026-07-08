@@ -203,7 +203,7 @@
           useful experiences.</p>
         <div>
           <p>Currently studying, observing, and making. I enjoy a sharp grid, unexpected type, and the moment a
-            prototype starts to feel alive.</p><a href="mailto:hello@rishishah.design">Let's work together&nbsp; ↗</a>
+            prototype starts to feel alive.</p><a href="#contact">Let's work together&nbsp; ↗</a>
         </div>
       </div>
       <div class="blob">RS</div>
@@ -248,11 +248,13 @@
       </div>
       <p class="connect-copy">Find me where the work lives — case studies, prototypes, code experiments, and design
         updates.</p>
-      <form class="connect-form" data-contact-form>
-        <label><span>Your email</span><input type="email" name="email" placeholder="your@email.com" required></label>
-        <label><span>Message</span><textarea name="message" rows="3" placeholder="Tell me what you want to build..."
-            required></textarea></label>
-        <button type="submit">Send message ↗</button>
+      <form class="connect-form" data-contact-form novalidate>
+        <label><span>Full name</span><input type="text" name="from_name" placeholder="Your full name" autocomplete="name" required></label>
+        <label><span>Email address</span><input type="email" name="from_email" placeholder="your@email.com" autocomplete="email" required></label>
+        <label><span>Subject</span><input type="text" name="subject" placeholder="Internship, project, collaboration..." required></label>
+        <label><span>Message</span><textarea name="message" rows="4" placeholder="Tell me what you want to build..." required></textarea></label>
+        <button type="submit" data-contact-submit>Send message ↗</button>
+        <p class="contact-status" data-contact-status aria-live="polite" hidden></p>
       </form>
       <div class="connect-links"><a href="https://www.linkedin.com/in/rishi-shah-89b1b3341/" target="_blank"
           rel="noreferrer"><small>01</small><span>LinkedIn</span><b>Connect ↗</b></a><a
@@ -267,7 +269,10 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/emailjs-config.js"></script>
+  <script src="js/emailjs-contact.js"></script>
 </body>
 
 </html>

@@ -71,19 +71,7 @@ if (siteHeader && originalNav) {
   requestAnimationFrame(settleIndicator);
 }
 
-/* ── Footer contact form: opens visitor's email app ── */
-const contactForm = document.querySelector('[data-contact-form]');
-if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(contactForm);
-    const email = String(data.get('email') || '').trim();
-    const message = String(data.get('message') || '').trim();
-    const subject = encodeURIComponent('Portfolio enquiry from Rishi Shah website');
-    const body = encodeURIComponent(`Hi Rishi,\n\n${message}\n\nFrom: ${email}`);
-    window.location.href = `mailto:hello@rishishah.design?subject=${subject}&body=${body}`;
-  });
-}
+/* Contact form handling lives in js/emailjs-contact.js */
 
 /* ────────────────────────────────────────────
    GSAP + ScrollTrigger registration

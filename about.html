@@ -135,10 +135,13 @@
   <footer id="contact" class="connect-footer about-footer">
     <div class="footer-top"><p class="eyebrow">Connect with me</p><span class="footer-monogram">RS</span></div>
     <p class="connect-copy">Have an internship, project or curious idea? I’d love to hear about it.</p>
-    <form class="connect-form" data-contact-form>
-      <label><span>Your email</span><input type="email" name="email" placeholder="your@email.com" required></label>
-      <label><span>Message</span><textarea name="message" rows="3" placeholder="Tell me what you’re working on..." required></textarea></label>
-      <button type="submit">Send message ↗</button>
+    <form class="connect-form" data-contact-form novalidate>
+      <label><span>Full name</span><input type="text" name="from_name" placeholder="Your full name" autocomplete="name" required></label>
+      <label><span>Email address</span><input type="email" name="from_email" placeholder="your@email.com" autocomplete="email" required></label>
+      <label><span>Subject</span><input type="text" name="subject" placeholder="Internship, project, collaboration..." required></label>
+      <label><span>Message</span><textarea name="message" rows="4" placeholder="Tell me what you're working on..." required></textarea></label>
+      <button type="submit" data-contact-submit>Send message ↗</button>
+      <p class="contact-status" data-contact-status aria-live="polite" hidden></p>
     </form>
     <div class="connect-links">
       <a href="https://www.linkedin.com/in/rishi-shah-89b1b3341/" target="_blank" rel="noreferrer"><small>01</small><span>LinkedIn</span><b>Connect ↗</b></a>
@@ -148,6 +151,9 @@
     <div class="footer-bottom"><span>Available for internships and collaborations.</span><span>© <span id="year"></span> Rishi Shah</span></div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/about-page.js"></script>
+  <script src="js/emailjs-config.js"></script>
+  <script src="js/emailjs-contact.js"></script>
 </body>
 </html>
