@@ -102,6 +102,7 @@ function initEmailJsContactForms() {
         subject: String(data.get('subject')).trim(),
         message: String(data.get('message')).trim(),
         to_name: 'Rishi Shah',
+        to_email: 'hello@rishishah.design',
       };
 
       try {
