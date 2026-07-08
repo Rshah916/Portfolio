@@ -1,0 +1,431 @@
+.case-cards,
+.projects,
+.repo-heading,
+.repos {
+  display: none !important
+}
+
+/* ── UX Case Studies section ── */
+.ux-case-studies {
+  padding: 80px 0 60px
+}
+
+.case-study-intro {
+  margin-bottom: 48px
+}
+
+.case-study-intro .eyebrow {
+  margin-bottom: 14px
+}
+
+.case-study-intro h2 {
+  font-size: clamp(48px, 6.8vw, 102px);
+  line-height: .9;
+  letter-spacing: -.085em;
+  margin: 0 0 18px
+}
+
+.case-study-intro p {
+  max-width: 420px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0
+}
+
+.case-study-rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 14px
+}
+
+/* wide cards span 2 columns */
+.study-card--wide {
+  grid-column: span 2
+}
+
+.study-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  color: #fff;
+  background: #252525;
+  text-decoration: none;
+  aspect-ratio: 4/3;
+  isolation: isolate
+}
+
+.study-card--wide {
+  aspect-ratio: 16/9
+}
+
+.study-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform .65s cubic-bezier(.2,.75,.25,1), filter .45s
+}
+
+.study-card:hover img {
+  transform: scale(1.055);
+  filter: brightness(.45)
+}
+
+.study-card span {
+  position: absolute;
+  inset: 0;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(0,0,0,.3), transparent 42%, rgba(0,0,0,.76))
+}
+
+.study-card small {
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: .07em
+}
+
+.study-card b {
+  font-size: clamp(18px, 1.8vw, 28px);
+  line-height: .93;
+  letter-spacing: -.06em;
+  margin-top: auto
+}
+
+.study-card i {
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: .06em;
+  font-style: normal;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: .3s
+}
+
+.study-card:hover i {
+  opacity: 1;
+  transform: translateY(0)
+}
+
+@media(max-width: 700px) {
+  .ux-case-studies {
+    padding: 50px 0 30px
+  }
+
+  .case-study-rail {
+    grid-template-columns: 1fr;
+    gap: 12px
+  }
+
+  .study-card--wide {
+    grid-column: span 1;
+    aspect-ratio: 4/3
+  }
+
+  .study-card {
+    aspect-ratio: 4/3
+  }
+
+  .study-card i {
+    opacity: 1;
+    transform: none
+  }
+}
+
+/* ── Landing pages section ── */
+.landing-pages {
+  padding: 10px 0 80px
+}
+
+.landing-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px
+}
+
+.landing-intro h2 {
+  font-size: clamp(48px, 6.8vw, 102px);
+  line-height: .9;
+  letter-spacing: -.085em;
+  margin: 0 0 20px
+}
+
+.landing-intro p {
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 auto
+}
+
+/* word splits for stagger animation */
+.landing-intro h2 .split-word {
+  display: inline-block;
+  color: var(--rose);
+  transition: color .3s
+}
+
+/* 3D stage — the cards "stand up" from this perspective floor */
+.landing-rail {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5vw;
+  width: 100%;
+  padding-bottom: 15px;
+  perspective: 1560px;
+  perspective-origin: 50% 100%;
+  transform-style: preserve-3d;
+  overflow: visible;
+  /* let GSAP handle clipping */
+}
+
+/* individual card */
+.landing-card {
+  position: relative;
+  display: block;
+  width: 17vw;
+  height: 22vw;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  color: #fff;
+  background: #252525;
+  text-decoration: none;
+  isolation: isolate;
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.landing-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .65s cubic-bezier(.2, .75, .25, 1), filter .45s
+}
+
+.landing-card span {
+  position: absolute;
+  inset: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .3), transparent 43%, rgba(0, 0, 0, .8));
+  z-index: 1
+}
+
+.landing-card small {
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: .08em
+}
+
+.landing-card b {
+  font-size: clamp(18px, 1.6vw, 26px);
+  line-height: .94;
+  letter-spacing: -.06em;
+  margin-top: auto
+}
+
+.landing-card i {
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: .06em;
+  font-style: normal;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(7px);
+  transition: .3s
+}
+
+.landing-card:hover img {
+  transform: scale(1.075);
+  filter: brightness(.55)
+}
+
+.landing-card:hover i {
+  opacity: 1;
+  transform: translateY(0)
+}
+
+/* type-only card */
+.landing-card--type {
+  background: var(--acid);
+  color: #171717
+}
+
+.landing-card--type span {
+  background: none
+}
+
+.landing-card--type b {
+  font-size: clamp(24px, 2.3vw, 39px)
+}
+
+.landing-card--type em {
+  position: absolute;
+  right: -7%;
+  bottom: -14%;
+  font: italic 600 12vw 'Playfair Display', serif;
+  color: #1d1d1d;
+  opacity: .14
+}
+
+.landing-card--type:hover {
+  background: #181818;
+  color: var(--acid)
+}
+
+/* ── Mobile: revert to scrollable horizontal strip ── */
+@media(max-width:700px) {
+  .landing-intro {
+    text-align: left;
+    margin-bottom: 30px
+  }
+
+  .landing-intro h2 {
+    font-size: 15vw;
+    line-height: .88
+  }
+
+  .landing-intro p {
+    margin: 0
+  }
+
+  .landing-rail {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: visible;
+    scrollbar-width: thin;
+    gap: 12px;
+    padding-bottom: 12px;
+    perspective: none;
+    perspective-origin: unset;
+    transform-style: flat;
+  }
+
+  .landing-card {
+    width: 72vw;
+    height: 72vw;
+    flex-shrink: 0;
+    aspect-ratio: 1.05/1;
+    height: auto;
+    transform: none !important;
+    /* disable 3D on mobile */
+  }
+
+  .landing-card i {
+    opacity: 1;
+    transform: none
+  }
+}
+
+/* Final UX case-study layout: match Websites & Landing pages */
+.ux-case-studies{
+  position:relative;
+  padding:90px 0 90px;
+  margin-top:20px;
+  border-top:1px solid rgba(28,24,18,.08);
+}
+
+.case-study-intro{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 56px;
+}
+
+.case-study-intro .eyebrow{
+  position:absolute;
+  left:0;
+  top:90px;
+  margin:0;
+  text-align:left;
+}
+
+.case-study-intro h2{
+  font-size:clamp(48px,6.8vw,102px);
+  line-height:.9;
+  letter-spacing:-.085em;
+  margin:0 0 20px;
+}
+
+.case-study-intro h2 .split-word{
+  display:inline-block;
+}
+
+.case-study-intro p{
+  max-width:390px;
+  font-size:12px;
+  line-height:1.5;
+  color:var(--muted);
+  margin:0 auto;
+}
+
+.case-study-rail{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:0.5vw;
+  width:100%;
+  perspective:1560px;
+  perspective-origin:50% 100%;
+  transform-style:preserve-3d;
+  overflow:visible;
+  background:transparent!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+
+.study-card,
+.study-card--wide{
+  width:17vw;
+  height:22vw;
+  aspect-ratio:auto;
+  flex-shrink:0;
+  grid-column:auto;
+  background:transparent!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+
+.study-card small{
+  width:max-content;
+  max-width:100%;
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  background:rgba(255,255,255,.11);
+  backdrop-filter:blur(10px);
+}
+
+@media(max-width:700px){
+  .ux-case-studies{padding:58px 0 48px}
+  .case-study-intro{text-align:left;margin-bottom:30px}
+  .case-study-intro .eyebrow{position:static;margin-bottom:18px}
+  .case-study-intro h2{font-size:15vw;line-height:.88}
+  .case-study-intro p{margin:0}
+  .case-study-rail{
+    justify-content:flex-start;
+    overflow-x:auto;
+    overflow-y:visible;
+    scrollbar-width:thin;
+    gap:12px;
+    padding-bottom:12px;
+    perspective:none;
+    transform-style:flat;
+  }
+  .study-card,
+  .study-card--wide{
+    width:72vw;
+    min-width:72vw;
+    height:auto;
+    aspect-ratio:1.05/1;
+    transform:none!important;
+  }
+}

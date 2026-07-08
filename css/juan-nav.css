@@ -1,0 +1,211 @@
+/* Juan Mora inspired floating navigation */
+.nav {
+  position: fixed !important;
+  top: 22px;
+  left: 0;
+  right: 0;
+  z-index: 30 !important;
+  width: 100%;
+  padding: 0 3.5vw !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  color: #191919 !important;
+  mix-blend-mode: normal !important;
+  pointer-events: none;
+}
+
+.nav a,
+.nav button {
+  pointer-events: auto;
+}
+
+.wordmark {
+  width: max-content;
+  min-height: 42px;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 8px;
+  border-radius: 999px;
+  background: rgba(244, 241, 234, .82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(25, 25, 25, .12);
+  color: #191919 !important;
+  box-shadow: 0 10px 30px rgba(25, 25, 25, .12);
+  transition: transform .35s cubic-bezier(.2, .75, .25, 1), background .35s, color .35s;
+}
+
+.wordmark:hover {
+  background: rgba(255, 255, 255, .96);
+  color: #191919 !important;
+  border-color: rgba(255, 255, 255, .6);
+}
+
+.wordmark img {
+  display:none!important;
+}
+
+.wordmark .wm-dot {
+  color: var(--acid) !important
+}
+
+.wordmark .wm-text {
+  color: inherit !important
+}
+
+.nav nav,
+.jm-pill {
+  position: relative;
+  justify-self: center;
+  display: flex !important;
+  align-items: center;
+  gap: 0 !important;
+  min-height: 48px;
+  padding: 5px;
+  border-radius: 999px;
+  background: rgba(244, 241, 234, .84);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(25, 25, 25, .12);
+  box-shadow: 0 18px 44px rgba(25, 25, 25, .12), inset 0 0 0 1px rgba(255, 255, 255, .44);
+}
+
+.jm-indicator {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 72px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 10px 24px rgba(25, 25, 25, .08);
+  transition: transform .45s cubic-bezier(.2, .85, .2, 1), width .45s cubic-bezier(.2, .85, .2, 1), opacity .25s;
+  pointer-events: none;
+}
+
+.jm-pill a,
+.nav nav a {
+  position: relative;
+  z-index: 1;
+  min-width: 72px;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #514d48 !important;
+  text-decoration: none;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: -.03em;
+  transition: color .25s, transform .25s;
+}
+
+.jm-pill a:hover,
+.nav nav a:hover {
+  color: #191919 !important;
+  transform: translateY(-1px);
+}
+
+/* Active indicator stays white/opaque so text behind it reads dark */
+.jm-indicator {background:rgba(255,255,255,.96)!important}
+
+.jm-home {
+  min-width: 52px !important;
+  width: 52px;
+  padding: 0 !important;
+  background: #fff !important;
+  box-shadow: 0 8px 20px rgba(25, 25, 25, .08);
+}
+
+.jm-home img {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: block;
+}
+
+.jm-social {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.jm-social a {
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(244, 241, 234, .82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(25, 25, 25, .12);
+  color: #514d48 !important;
+  text-decoration: none;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 10px 30px rgba(25,25,25,.12);
+  transition: transform .28s cubic-bezier(.2, .75, .25, 1), background .28s, color .28s;
+}
+
+.jm-social a:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, .96);
+  color: #191919 !important;
+  border-color: rgba(255, 255, 255, .6);
+}
+
+.jm-pill a:hover,
+.nav nav a:hover,
+.jm-social a:hover,
+.wordmark:hover{
+  text-decoration:none;
+}
+
+@media(max-width:760px) {
+  .nav {
+    top: 14px;
+    padding: 0 5vw !important;
+    grid-template-columns: 1fr auto;
+  }
+
+  .wordmark {
+    padding-right: 10px;
+  }
+
+  .wordmark .wm-text,
+  .wordmark .wm-dot {
+    display: none;
+  }
+
+  .nav nav,
+  .jm-pill {
+    justify-self: end;
+    min-height: 44px;
+  }
+
+  .jm-pill a,
+  .nav nav a {
+    min-width: 62px;
+    height: 34px;
+    padding: 0 13px;
+    font-size: 12px !important;
+  }
+
+  .jm-indicator {
+    height: 34px;
+  }
+
+  .jm-home {
+    display: none !important;
+  }
+
+  .jm-social {
+    display: none;
+  }
+}
