@@ -11,6 +11,6 @@
 */
 window.EMAILJS_CONFIG = {
   serviceId: 'service_kadpiod',
-  templateId: 'YOUR_EMAILJS_TEMPLATE_ID',
-  publicKey: 'YOUR_EMAILJS_PUBLIC_KEY',
+  templateId: 'template_hc73qjl',
+  publicKey: 'ZKpDFbi3G_fP-DpJa',
 };
