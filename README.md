@@ -70,6 +70,7 @@ Interactive playground projects demonstrating visual and spatial studies:
 ├── index.html              # Primary entry point (Home & Selected Projects showcase)
 ├── about.html              # Design philosophy, background, and toolkit
 ├── work.html               # Gateway to external Behance, Figma, and GitHub builds
+├── LICENSE                 # MIT License details
 └── README.md               # You are here!
 ```
 
@@ -102,4 +103,11 @@ I help make projects clear and hard to forget. If you're looking for a student d
 * Fill out the form in the portfolio's contact footer.
 * Reach out via [LinkedIn](https://www.linkedin.com/in/rishi-shah-89b1b3341/).
 
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](file:///c:/Rishi/Personal%20Secrets/rishi-portfolio/LICENSE) file for details.
+
 Thanks for visiting! 🚀
+
